@@ -1,2 +1,4 @@
+django-environ
+python-dotven
 djongo
 pillow
