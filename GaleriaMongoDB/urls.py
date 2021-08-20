@@ -13,6 +13,7 @@ urlpatterns = (
         path("login/complete", vw_session.login, name="logear"),
         path("logout", vw_session.logout, name="logout"),
         path("create-user/", vw_session.vw_create, name="create-user"),
+        path("create-publicacion/", vw_galeria.vw_create, name="create-publicacion"),
         path("admin/", admin.site.urls),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
