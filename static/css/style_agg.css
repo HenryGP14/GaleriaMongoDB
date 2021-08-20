@@ -135,3 +135,21 @@
     height: 30px;
     padding: 0 10px;
 }
+
+.opciones .btn img {
+    width: 20px;
+}
+
+.opciones .btn.btn-opcion {
+    margin-right: 5px;
+}
+
+.opciones .btn.btn-opcion:hover {
+    background-color: rgba(177, 177, 177, 0.801);
+}
+
+.relax {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
