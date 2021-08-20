@@ -1,0 +1,12 @@
+[
+    {
+        "model": "session.Usuario",
+        "pk": 1,
+        "fields": {
+            "nombres": "Henry Pérez",
+            "nomusuario": "HenryPU",
+            "contrasenia": "140219hg",
+            "json_publicaciones": {}
+        }
+    }
+]
