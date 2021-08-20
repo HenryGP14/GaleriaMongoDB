@@ -24,7 +24,7 @@
                 <li class="fechaPublicacion">{{public.fecha}}</li>
             </div>
 
-            {% if request.session.usuario.autorizado %}
+            {% if request.session.usuario.id == usuario.id %}
             <div class="opciones">
                 <button class="btn btn-opcion">
                     <img src="{% static 'svg/lapiz.svg' %}" class="invertir">
