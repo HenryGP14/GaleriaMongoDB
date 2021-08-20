@@ -16,9 +16,19 @@
         <div class="bodyP">
             <img src="{% static 'img/pexel.jpg' %}" alt="">
         </div>
-        <div class="footerP">
-            <div class="descripcion">Foto de mi viaje a Rusia</div>
-            <li class="fechaPublicacion">Jueves, 19 de agosto 2021</li>
+        <div class="relax">
+            <div class="footerP">
+                <div class="descripcion">Foto de mi viaje a Rusia</div>
+                <li class="fechaPublicacion">Jueves, 19 de agosto 2021</li>
+            </div>
+            <div class="opciones">
+                <button class="btn btn-opcion">
+                    <img src="{% static 'svg/lapiz.svg' %}" class="invertir">
+                </button>
+                <button class="btn btn-opcion">
+                    <img src="{% static 'svg/eliminar.svg' %}" class="invertir">
+                </button>
+            </div>
         </div>
     </div>
 
@@ -41,4 +51,9 @@
         </div>
     </div>
 </div>
+
+<button type="button" id="agg-poster" class="float">
+    <p>+</p>
+</button>
+{% include 'modal.html' %}
 {% endblock content %}
