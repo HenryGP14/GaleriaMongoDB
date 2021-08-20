@@ -44,6 +44,12 @@ def logout(request):
 
 def vw_create(request):
     if request.method == "POST":
+        user_session = Session(request)
+        try:
+            if request.session["usuario"]:
+                return redirect("/")
+        except:
+            pass
         try:
             unUsuario = Usuario()
             unUsuario.nombres = request.POST["nombres"]
@@ -54,4 +60,3 @@ def vw_create(request):
             return render(request, "session.html", {"sms": "Usuario registrado correctamente."})
         except Exception as e:
             return render(request, "session.html", {"sms": "Existió un error al crear el usuario."})
-
