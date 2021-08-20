@@ -1,6 +1,5 @@
 from djongo import models
 
-# Create your models here.
 class Publicacion(models.Model):
     fecha = models.DateField()
     direccion = models.CharField(max_length = 100, null = False, blank = True)
