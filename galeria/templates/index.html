@@ -13,11 +13,19 @@
 
 <body>
     <header>
-        <div class="w-700">
-            <div class="flex-lef">
-                <img id="imgLogo" src="{% static 'svg/camera.svg' %}" alt="logo" srcset="">
-                <span id="txtLogo">PhotoSoft</span>
+        <div class="header">
+            <div class="logo">
+                <div>
+                    <img id="imgLogo" src="{% static 'svg/camera.svg' %}" alt="logo" srcset="">
+                    <span id="txtLogo">PhotoSoft</span>
+                </div>
             </div>
+            <nav class="nav">
+                <ul class="options">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>

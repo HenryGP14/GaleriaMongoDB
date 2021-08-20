@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style_auth.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="context">
+    <div class="col">
+        <div class="content">
+            <h1>Login</h1>
+            <form action="" method="post">
+                <div class="form-content">
+                    <label for="usuario">Usuario</label>
+                    <input class="write" type="text" name="usuario" id="usuario">
+                </div>
+                <div class="form-content">
+                    <label for="credenciales">Contraseña</label>
+                    <input class="write" type="password" name="credenciales" id="credenciales">
+                </div class="form-content">
+                <div class="form-content">
+                    <input type="submit" value="Iniciar sesión" class="btn btn-submit" id="inicar">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col">
+        <div class="content">
+            <h1>Registrarse</h1>
+            <form action="" method="post">
+                <div class="form-content">
+                    <label for="usuario">Usuario</label>
+                    <input class="write" type="text" name="usuario" id="usuario">
+                </div>
+                <div class="form-content">
+                    <label for="usuario">Nombres completos</label>
+                    <input class="write" type="text" name="usuario" id="usuario">
+                </div>
+                <div class="form-content">
+                    <label for="credenciales">Contraseña</label>
+                    <input class="write" type="password" name="credenciales" id="credenciales">
+                </div class="form-content">
+                <div class="form-content">
+                    <label for="conf-credenciales">Confirmar Contraseña</label>
+                    <input class="write" type="password" name="conf-credenciales" id="conf-credenciales">
+                </div>
+                <div class="form-content">
+                    <label for="direccion">Dirección</label>
+                    <input class="write" type="text" name="direccion" id="direccion">
+                </div>
+                <div class="form-content">
+                    <input type="submit" value="Registrarse" class="btn btn-submit" id="regisrar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

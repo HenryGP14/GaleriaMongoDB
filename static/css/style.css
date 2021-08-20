@@ -1,83 +1,122 @@
-body{
+body {
     background-color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
 }
 
-header, footer, .publicacion{
+header,
+footer,
+.publicacion {
     background-color: #ffffff;
 }
-header{
-    padding: 12px 0px;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
 }
 
+.nav .options {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    float: left;
+    text-align: right;
+}
 
-.flex-lef{
+.logo {
     display: flex;
     align-items: center;
-    justify-content: left;
 }
 
-#imgLogo{
+.nav .options li {
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
+}
+
+.nav .options li a {
+    padding: 20px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #ffffff;
+    background-color: rgb(167, 167, 167);
+}
+
+#imgLogo {
     width: 30px;
     height: 30px;
 }
-#txtLogo{
+
+#txtLogo {
     font-size: 22px;
     margin-left: 10px;
     font-weight: bold;
     color: rgb(41, 41, 41);
 }
 
-.w-700{
+.w-700 {
     max-width: 610px;
     margin: 0 auto;
 }
 
-.publicacion{
+.publicacion {
     margin: 20px 0px;
 }
 
 /* Header de la publicacion */
-.headerP{
+.headerP {
     display: flex;
     align-items: center;
     padding: 10px;
 }
-.imgRedonda{
+
+.imgRedonda {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     overflow: hidden;
 }
-.imgRedonda > img{
+
+.imgRedonda>img {
     width: 100%;
 }
-.felx-row{
+
+.felx-row {
     display: block;
     margin-left: 10px;
 }
-.felx-row > .nombreUsuario{
+
+.felx-row>.nombreUsuario {
     font-size: 18px;
     color: rgb(15, 15, 15);
 }
-.felx-row > .ciudad{
+
+.felx-row>.ciudad {
     font-size: 14px;
     color: rgb(41, 41, 41);
 }
 
 /* Body de la publicacion */
-.bodyP, .bodyP > img{
+.bodyP,
+.bodyP>img {
     width: 100%;
 }
-.footerP{
+
+.footerP {
     padding: 10px;
 }
-.footerP > .descripcion{
+
+.footerP>.descripcion {
     font-weight: bold;
 }
-.footerP > .fechaPublicacion{
+
+.footerP>.fechaPublicacion {
     font-size: 14px;
     margin-top: 5px;
     margin-left: 12px;
