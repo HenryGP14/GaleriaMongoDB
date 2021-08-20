@@ -62,15 +62,15 @@ WSGI_APPLICATION = "GaleriaMongoDB.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "djongo",
-#         "NAME": os.getenv("DB_NAME"),
-#         "CLIENT": {
-#             "host": os.getenv("DB_HOST"),
-#         },
-#     }
-# }
+DATABASES = {
+     "default": {
+         "ENGINE": "djongo",
+         "NAME": os.getenv("DB_NAME"),
+         "CLIENT": {
+             "host": os.getenv("DB_HOST"),
+         },
+     }
+ } 
 
 
 # Password validation
