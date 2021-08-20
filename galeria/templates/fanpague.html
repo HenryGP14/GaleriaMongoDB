@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+{% for usuario in ltPublicaciones %}
+{% for public in usuario.json_publicaciones %}
 <div class="w-700">
     <div class="publicacion">
         <div class="headerP">
@@ -9,17 +11,17 @@
                 <img src="{% static 'img/user.jpg' %}" alt="">
             </div>
             <div class="felx-row">
-                <div class="nombreUsuario">darlingBV05</div>
-                <div class="ciudad">Mocache, Ecuador</div>
+                <div class="nombreUsuario">{{usuario.nombres}}</div>
+                <div class="ciudad">{{public.direccion}}</div>
             </div>
         </div>
         <div class="bodyP">
-            <img src="{% static 'img/pexel.jpg' %}" alt="">
+            <img src="{{public.ruta_publicacion}}" alt="">
         </div>
         <div class="relax">
             <div class="footerP">
-                <div class="descripcion">Foto de mi viaje a Rusia</div>
-                <li class="fechaPublicacion">Jueves, 19 de agosto 2021</li>
+                <div class="descripcion">{{public.descripcion}}</div>
+                <li class="fechaPublicacion">{{public.fecha}}</li>
             </div>
 
             {% if request.session.usuario.autorizado %}
@@ -36,25 +38,8 @@
         </div>
     </div>
     <div>Mensaje :  {{sms}}</div>
-    <div class="publicacion">
-        <div class="headerP">
-            <div class="imgRedonda">
-                <img src="{% static 'img/user.jpg' %}" alt="">
-            </div>
-            <div class="felx-row">
-                <div class="nombreUsuario">darlingBV05</div>
-                <div class="ciudad">Mocache, Ecuador</div>
-            </div>
-        </div>
-        <div class="bodyP">
-            <img src="{% static 'img/pexel.jpg' %}" alt="">
-        </div>
-        <div class="footerP">
-            <div class="descripcion">Foto de mi viaje a Rusia</div>
-            <li class="fechaPublicacion">Jueves, 19 de agosto 2021</li>
-        </div>
-    </div>
-</div>
+{% endfor %}
+{% endfor %}
 
 
 {% if request.session.usuario.autorizado %}

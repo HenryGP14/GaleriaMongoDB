@@ -8,7 +8,9 @@ from datetime import datetime
 
 
 def vw_index(request):
-    return render(request, "fanpague.html")
+    ltPublicaciones=Usuario.objects.all()
+    print(ltPublicaciones)
+    return render(request, "fanpague.html",{'ltPublicaciones':ltPublicaciones})
 
 
 def vw_create(request):
