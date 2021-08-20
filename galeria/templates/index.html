@@ -51,6 +51,26 @@
     {% if request.session.usuario.autorizado %}
     <script src="{% static 'js/modal.js' %}"></script>
     {% endif %}
+    <script src="{% static 'js/code.js' %}"></script>
+
+    {% for message in messages %}
+    {% if message.tags == "success" %}
+    <script>
+        Swal.fire({
+            "text": "{{ message }}",
+            "icon": "{{ message.tags }}"
+        })
+    </script>
+    {% elif message.tags == "error" %}
+    <script>
+        Swal.error({
+            "text": "{{ message }}",
+            "icon": "{{ message.tags }}"
+        })
+    </script>
+    {% endif %}
+    {% endfor %}
+
 
     {% block js %} {% endblock js %}
 </body>

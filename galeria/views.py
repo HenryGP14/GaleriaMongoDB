@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db import transaction
 from galeria.models import Publicacion
 from session.models import Usuario
+from django.contrib import messages
 import os, time
 from datetime import datetime
 
@@ -33,6 +34,8 @@ def vw_create(request):
                     }
                 )
                 unUsuario.save()
-                return render(request, "fanpague.html", {"sms": "Publicación registrada exitosamente."})
+                messages.success(request, "Publicación registrada exitosamente.")
+                return redirect("/")
         except Exception as e:
-            return render(request, "fanpague.html", {"sms": "Existió un error al crear publicación."})
+            messages.error(request, "Existió un error al crear publicación, intentelo más tarde")
+            return redirect("/")

@@ -63,11 +63,11 @@ WSGI_APPLICATION = "GaleriaMongoDB.wsgi.application"
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-     "default": {
-         "ENGINE": "djongo",
-         "NAME": os.getenv("DB_NAME"),
-     }
- } 
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": os.getenv("DB_NAME"),
+    }
+}
 
 
 # Password validation
@@ -112,3 +112,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  # -- Aquí funciona solo
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"

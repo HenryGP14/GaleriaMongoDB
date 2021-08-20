@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from session.models import Usuario
 
 from session.usuario import Session
@@ -55,12 +56,14 @@ def vw_create(request):
         except:
             pass
         try:
-            unUsuario = Usuario()
-            unUsuario.nombres = request.POST["nombres"]
-            unUsuario.nomusuario = request.POST["usuario"]
-            unUsuario.contrasenia = request.POST["credenciales"]
-            unUsuario.json_publicaciones = []
-            unUsuario.save()
-            return render(request, "session.html", {"sms": "Usuario registrado correctamente."})
+            # unUsuario = Usuario()
+            # unUsuario.nombres = request.POST["nombres"]
+            # unUsuario.nomusuario = request.POST["usuario"]
+            # unUsuario.contrasenia = request.POST["credenciales"]
+            # unUsuario.json_publicaciones = []
+            # unUsuario.save()
+            messages.success(request, "Usuario registrado correctamente.")
+            return redirect("/")
         except Exception as e:
-            return render(request, "session.html", {"sms": "Existió un error al crear el usuario."})
+            messages.error(request, "Existió un error al crear el usuario.")
+            return redirect("/")
