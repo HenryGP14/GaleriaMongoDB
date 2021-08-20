@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_agg.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     {% block css %} {% endblock css %}
     <title>Galería</title>
 </head>
@@ -21,19 +24,30 @@
                 </div>
             </div>
             <nav class="nav">
-                <ul class="options">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
-                </ul>
+                <div class="options">
+                    <div class="select"><a href="/">Inicio</a></div>
+                    <div class="select"><a href="{% url 'login' %}">Iniciar sesión</a></div>
+                    <div class="select">
+                        <div class="content-profile">
+                            <a href="{% url 'login' %}">Henry Pérez Muñoz</a>
+                            <img src="{% static 'svg/hacker.svg' %}" id="profile">
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
     <main>
         {% block content %} {% endblock content %}
+        <button type="button" id="agg-poster" class="float">
+            <p>+</p>
+        </button>
+        {% include 'modal.html' %}
     </main>
     <footer>
         <div class="w-700"></div>
     </footer>
+    <script src="{% static 'js/modal.js' %}"></script>
     {% block js %} {% endblock js %}
 </body>
 

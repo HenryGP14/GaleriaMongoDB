@@ -1,0 +1,26 @@
+{% load static %}
+<div id="MyModal" class="modal">
+    <div class="flex" id="flex">
+        <div class="contenido-modal">
+            <div class="modal-header flex">
+                <h2>Subir imagen</h2>
+                <span class="close" id="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="content-modal">
+                    <img src="{% static 'svg/camera.svg' %}" id="photo">
+                    <form action="">
+                        <input type="file" id="add-img" name="photo" accept="image/png , image/jpg , image/jpeg"
+                            style="display: none;">
+                        <button class="btn btn-upload" id="upload" type="button">Subir imagen</button>
+                        <label for="direccion">Dirección</label>
+                        <input type="text" required>
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" required>
+                        <button type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
