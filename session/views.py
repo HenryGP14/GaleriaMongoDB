@@ -22,7 +22,11 @@ def login(request):
             return redirect("login")
     except:
         pass
-    user = Usuario.objects.get(nomusuario=request.POST["usuario"])
+    try:
+        user = Usuario.objects.get(nomusuario=request.POST["usuario"])
+    except:
+        return redirect("login")
+
     if user.contrasenia == request.POST["credenciales"]:
         user_session.add(user)
         return redirect("/")
