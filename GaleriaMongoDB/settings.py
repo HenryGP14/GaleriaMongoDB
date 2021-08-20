@@ -66,9 +66,6 @@ DATABASES = {
      "default": {
          "ENGINE": "djongo",
          "NAME": os.getenv("DB_NAME"),
-         "CLIENT": {
-             "host": os.getenv("DB_HOST"),
-         },
      }
  } 
 
