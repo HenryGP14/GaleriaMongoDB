@@ -49,8 +49,9 @@ def vw_create(request):
             unUsuario.nombres = request.POST["nombres"]
             unUsuario.nomusuario = request.POST["usuario"]
             unUsuario.contrasenia = request.POST["credenciales"]
-            unUsuario.json_publicaciones = [{"": ""}]
+            unUsuario.json_publicaciones = []
             unUsuario.save()
             return render(request, "session.html", {"sms": "Usuario registrado correctamente."})
         except Exception as e:
             return render(request, "session.html", {"sms": "Existió un error al crear el usuario."})
+
