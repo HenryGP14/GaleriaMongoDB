@@ -8,18 +8,19 @@
             </div>
             <div class="modal-body">
                 <div class="content-modal">
-                    <img src="{% static 'svg/camera.svg' %}" id="photo">
-                    <form action="">
+                    <img src="{% static 'svg/camera.svg' %}" id="photo" name="photo">
+                    <form method="POST" id="formPublicacion" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <input type="file" id="add-img" name="photo" accept="image/png , image/jpg , image/jpeg"
                             style="display: none;">
                         <button class="btn btn-upload" id="upload" type="button">Subir imagen</button>
                         <div class="form-content">
                             <label for="direccion">Dirección</label>
-                            <input type="text" class="write" required>
+                            <input type="text" class="write" id="direccion" name="direccion" required>
                         </div>
                         <div class="form-content">
                             <label for="descripcion">Descripción</label>
-                            <input type="text" class="write" required>
+                            <input type="text" class="write" id="descripcion" name="descripcion" required>
                         </div>
                         <button class="btn btn-upload" type="submit">Guardar</button>
                     </form>

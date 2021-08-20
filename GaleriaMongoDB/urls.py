@@ -9,7 +9,8 @@ from session import views as vw_session
 urlpatterns = (
     [
         path("", vw_galeria.vw_index, name="index"),
-        path("login", vw_session.vw_login, name="login"),
+        path("login/", vw_session.vw_login, name="login"),
+        path("create-user/", vw_session.vw_create, name="create-user"),
         path("admin/", admin.site.urls),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
