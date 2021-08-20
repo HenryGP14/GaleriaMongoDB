@@ -98,3 +98,40 @@
         width: 70%;
     }
 }
+
+.btn {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-upload {
+    width: 100%;
+}
+
+.btn.btn-upload:hover {
+    background-color: #333;
+    color: aliceblue;
+}
+
+.form-content {
+    margin: 10px 0;
+}
+
+.form-content label,
+.form-content input {
+    margin-top: 5px;
+    display: block;
+}
+
+.form-content input {
+    width: 100%;
+}
+
+.form-content .write {
+    height: 30px;
+    padding: 0 10px;
+}

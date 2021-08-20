@@ -1,8 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
 .context {
     width: 100%;
     display: grid;
@@ -21,37 +16,9 @@
     margin: auto;
 }
 
-.btn {
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
 .btn.btn-submit:hover {
     background-color: #333;
     color: aliceblue;
-}
-
-.form-content {
-    margin: 10px 0;
-}
-
-.form-content label,
-.form-content input {
-    margin-top: 5px;
-    display: block;
-}
-
-.form-content input {
-    width: 80%;
-}
-
-.form-content .write {
-    height: 30px;
-    padding: 0 10px;
 }
 
 @media (max-width: 530px) {
