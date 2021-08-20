@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header ul {
+    width: 100%;
+    float: left;
+    text-align: right;
+    background-color: #333;
+}
+
+.header ul li {
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
+}
+
+.header ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.context {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(100vh - 49px);
+    align-items: center;
+    margin: auto;
+    background-color: #fdfeff;
+}
+
+.context .col {
+    padding: 0 30px;
+}
+
+.context .col .content {
+    margin: auto;
+}
+
+.btn {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn.btn-submit:hover {
+    background-color: #333;
+    color: aliceblue;
+}
+
+.form-content {
+    margin: 10px 0;
+}
+
+.form-content label,
+.form-content input {
+    margin-top: 5px;
+    display: block;
+}
+
+.form-content input {
+    width: 80%;
+}
+
+.form-content .write {
+    height: 30px;
+    padding: 0 10px;
+}
+
+@media (max-width: 530px) {
+    .context {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
