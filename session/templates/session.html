@@ -10,7 +10,7 @@
     <div class="col">
         <div class="content">
             <h1>Login</h1>
-            <form action="/login/" method="POST" id="formUsuario">
+            <form action="{% url 'logear' %}" method="POST" id="formUsuario">
                 {% csrf_token %}
                 <div class="form-content">
                     <label for="usuario">Usuario</label>
@@ -54,7 +54,5 @@
         </div>
     </div>
 </div>
-<div>error :  {{sms_error}}</div>
+<div>error : {{sms_error}}</div>
 {% endblock content %}
-
-

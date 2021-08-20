@@ -10,6 +10,8 @@ urlpatterns = (
     [
         path("", vw_galeria.vw_index, name="index"),
         path("login/", vw_session.vw_login, name="login"),
+        path("login/complete", vw_session.login, name="logear"),
+        path("logout", vw_session.logout, name="logout"),
         path("create-user/", vw_session.vw_create, name="create-user"),
         path("admin/", admin.site.urls),
     ]

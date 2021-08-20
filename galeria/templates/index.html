@@ -26,13 +26,17 @@
             <nav class="nav">
                 <div class="options">
                     <div class="select"><a href="/">Inicio</a></div>
+                    {% if not request.session.usuario %}
                     <div class="select"><a href="{% url 'login' %}">Iniciar sesión</a></div>
+                    {% endif %}
+                    {% if request.session.usuario.autorizado %}
                     <div class="select">
                         <div class="content-profile">
-                            <a href="{% url 'login' %}">Henry Pérez Muñoz</a>
+                            <a href="{% url 'logout' %}">Henry Pérez Muñoz</a>
                             <img src="{% static 'svg/hacker.svg' %}" id="profile">
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </nav>
         </div>
@@ -43,7 +47,11 @@
     <footer>
         <div class="w-700"></div>
     </footer>
+
+    {% if request.session.usuario.autorizado %}
     <script src="{% static 'js/modal.js' %}"></script>
+    {% endif %}
+
     {% block js %} {% endblock js %}
 </body>
 

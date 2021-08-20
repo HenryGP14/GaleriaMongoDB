@@ -6,7 +6,7 @@
             "nombres": "Henry Pérez",
             "nomusuario": "HenryPU",
             "contrasenia": "140219hg",
-            "json_publicaciones": {}
+            "json_publicaciones": [{}]
         }
     }
 ]
