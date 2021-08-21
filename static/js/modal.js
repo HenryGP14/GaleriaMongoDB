@@ -37,3 +37,26 @@ function createPreview(element) {
         .getElementById("photo")
         .setAttribute("src", URL.createObjectURL(element));
 }
+
+function modalClick(id, descripccion, direccion, imagen) {
+    let ModalEdit = document.getElementById("MyModalEdit");
+    let flexEdit = document.getElementById("flexEdit");
+    let cerrar = document.getElementById("closeEdit");
+
+    $("#idEdit").val(id);
+    $("#direccionEdit").val(direccion);
+    $("#descripcionEdit").val(descripccion);
+    $("#photoEdit").attr("src", imagen);
+
+    ModalEdit.style.display = "block";
+
+    cerrar.addEventListener("click", function () {
+        ModalEdit.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target == flexEdit) {
+            ModalEdit.style.display = "none";
+        }
+    });
+}

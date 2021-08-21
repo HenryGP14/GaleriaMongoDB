@@ -89,7 +89,8 @@
     padding: 20px 16px;
 }
 
-#photo {
+#photo,
+#photoEdit {
     width: 100%;
 }
 

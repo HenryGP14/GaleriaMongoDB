@@ -1,60 +1,29 @@
 {% load static %}
-<div class="modal">
-    <div class="flex" id="flex">
+<div id="MyModalEdit" class="modal">
+    <div class="flex" id="flexEdit">
         <div class="contenido-modal">
             <div class="modal-header flex">
                 <h2>Subir imagen</h2>
-                <span class="close" id="close">&times;</span>
+                <span class="close" id="closeEdit">&times;</span>
             </div>
             <div class="modal-body">
                 <div class="content-modal">
-                    <img src="{{public.ruta_publicacion}}" id="photo" name="photo">
+                    <img id="photoEdit" name="photo">
                     <form action="/create-publicacion/" method="POST" id="formPublicacion"
                         enctype="multipart/form-data">
                         {% csrf_token %}
+                        <input type="text" id="idEdit" disabled hidden>
                         <div class="form-content">
-                            <label for="direccion">Dirección</label>
-                            <input type="text" class="write" id="direccion" name="direccion" required
-                                value="{{public.direccion}}">
+                            <label for="direccionEdit">Dirección</label>
+                            <input type="text" class="write" id="direccionEdit" name="direccionEdit" required>
                         </div>
                         <div class="form-content">
-                            <label for="descripcion">Descripción</label>
-                            <input type="text" class="write" id="descripcion" name="descripcion" required
-                                value="{{public.descripcion}}">
+                            <label for="descripcionEdit">Descripción</label>
+                            <input type="text" class="write" id="descripcionEdit" name="descripcionEdit" required>
                         </div>
-                        <button class="btn btn-upload" type="submit">Guardar cambios</button>
+                        <button class="btn btn-upload" type="submit">Guardar</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="pl{{usuario.id}}{{public.publicacion_id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar publicacion</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img src="{{public.ruta_publicacion}}" id="photo" name="photo">
-                <form action="/create-publicacion/" method="POST" id="formPublicacion" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-content">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" class="write" id="direccion" name="direccion" required
-                            value="{{public.direccion}}">
-                    </div>
-                    <div class="form-content">
-                        <label for="descripcion">Descripción</label>
-                        <input type="text" class="write" id="descripcion" name="descripcion" required
-                            value="{{public.descripcion}}">
-                    </div>
-                    <button class="btn btn-upload" type="submit">Guardar cambios</button>
-                </form>
             </div>
         </div>
     </div>
