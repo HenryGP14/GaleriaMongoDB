@@ -43,7 +43,9 @@ function modalClick(id, descripccion, direccion, imagen) {
     let flexEdit = document.getElementById("flexEdit");
     let cerrar = document.getElementById("closeEdit");
 
-    $("#idEdit").val(id);
+    console.log("/update-publicacion/" + id);
+
+    $("#formPublicacionEdit").attr("action", "/update-publicacion/" + id);
     $("#direccionEdit").val(direccion);
     $("#descripcionEdit").val(descripccion);
     $("#photoEdit").attr("src", imagen);

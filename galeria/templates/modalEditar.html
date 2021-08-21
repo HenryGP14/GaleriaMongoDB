@@ -9,10 +9,8 @@
             <div class="modal-body">
                 <div class="content-modal">
                     <img id="photoEdit" name="photo">
-                    <form action="/create-publicacion/" method="POST" id="formPublicacion"
-                        enctype="multipart/form-data">
+                    <form method="POST" id="formPublicacionEdit" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <input type="text" id="idEdit" disabled hidden>
                         <div class="form-content">
                             <label for="direccionEdit">Dirección</label>
                             <input type="text" class="write" id="direccionEdit" name="direccionEdit" required>
