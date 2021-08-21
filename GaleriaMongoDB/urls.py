@@ -14,6 +14,7 @@ urlpatterns = (
         path("logout", vw_session.logout, name="logout"),
         path("create-user/", vw_session.vw_create, name="create-user"),
         path("create-publicacion/", vw_galeria.vw_create, name="create-publicacion"),
+        path("delete-publicacion/", vw_galeria.vw_delete, name="delete-publicacion"),
         path("admin/", admin.site.urls),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -41,3 +41,19 @@ def vw_create(request):
         except Exception as e:
             messages.error(request, "Existió un error al crear publicación, intentelo más tarde")
             return redirect("/")
+
+def vw_delete(request, id):
+    if request.method == "POST":
+        try:
+            with transaction.atomic():
+                unaPublicacion = Publicacion()
+                unUsuario = Usuario.objects.get(id=request.session["usuario"]["id"])
+                
+                messages.success(request, "Publicación eliminada exitosamente.")
+                return redirect("/")
+        except Exception as e:
+            messages.error(request, "Existió un error al eliminar publicación, intentelo más tarde")
+            return redirect("/")
+
+
+

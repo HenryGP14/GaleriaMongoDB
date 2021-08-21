@@ -56,12 +56,12 @@ def vw_create(request):
         except:
             pass
         try:
-            # unUsuario = Usuario()
-            # unUsuario.nombres = request.POST["nombres"]
-            # unUsuario.nomusuario = request.POST["usuario"]
-            # unUsuario.contrasenia = request.POST["credenciales"]
-            # unUsuario.json_publicaciones = []
-            # unUsuario.save()
+            unUsuario = Usuario()
+            unUsuario.nombres = request.POST["nombres"]
+            unUsuario.nomusuario = request.POST["usuario"]
+            unUsuario.contrasenia = request.POST["credenciales"]
+            unUsuario.json_publicaciones = []
+            unUsuario.save()
             messages.success(request, "Usuario registrado correctamente.")
             return redirect("/")
         except Exception as e:

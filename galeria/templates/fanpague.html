@@ -29,9 +29,9 @@
                 <button class="btn btn-opcion">
                     <img src="{% static 'svg/lapiz.svg' %}" class="invertir">
                 </button>
-                <button class="btn btn-opcion">
+                <a class="btn btn-opcion" href="/delete-publicacion/{{public.publicacion_id}}">
                     <img src="{% static 'svg/eliminar.svg' %}" class="invertir">
-                </button>
+                </a>
             </div>
             {% endif %}
 
