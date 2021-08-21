@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.db import transaction
 from galeria.models import Publicacion
@@ -43,17 +44,24 @@ def vw_create(request):
             return redirect("/")
 
 def vw_delete(request, id):
-    if request.method == "POST":
-        try:
-            with transaction.atomic():
-                unaPublicacion = Publicacion()
-                unUsuario = Usuario.objects.get(id=request.session["usuario"]["id"])
-                
-                messages.success(request, "Publicación eliminada exitosamente.")
-                return redirect("/")
-        except Exception as e:
-            messages.error(request, "Existió un error al eliminar publicación, intentelo más tarde")
-            return redirect("/")
+    try:
+        with transaction.atomic():
+            unUsuario = Usuario.objects.get(id=request.session["usuario"]["id"])
+            indice = 0
+            for pubic in unUsuario.json_publicaciones:
+                if(pubic["publicacion_id"] == id):
+                    unUsuario.json_publicaciones.pop(indice)
+                    unUsuario.save()
+                    unaPublicacion = Publicacion.objects.get(id = id)
+                    ruta_img_remove =  unaPublicacion.ruta_publicacion.url[1:]
+                    unaPublicacion.delete()
+                    os.remove(ruta_img_remove)
+                    messages.success(request, "Publicación eliminada exitosamente.")
+                    return redirect("/")
+                indice += 1
+    except Exception as e:
+        messages.error(request, "Existió un error al eliminar publicación, intentelo más tarde")
+        return redirect("/")
 
 
 
