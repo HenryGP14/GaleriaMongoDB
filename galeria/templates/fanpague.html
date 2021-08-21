@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-
 {% for usuario in ltPublicaciones %}
 {% for public in usuario.json_publicaciones %}
 <div class="w-700">
@@ -27,12 +26,11 @@
 
             {% if request.session.usuario.id == usuario.id %}
             <div class="opciones">
-                <button type="button" class="btn btn-opcion" data-toggle="modal" data-target="#pl{{usuario.id}}{{public.publicacion_id}}">
-                    <img src="{% static 'svg/lapiz.svg' %}" class="invertir"/>
+                <button class="btn btn-opcion">
+                    <img src="{% static 'svg/lapiz.svg' %}" class="invertir">
                 </button>
-                {% include 'modalEditar.html' %}
                 <a class="btn btn-opcion" href="/delete-publicacion/{{public.publicacion_id}}">
-                    <img src="{% static 'svg/eliminar.svg' %}" class="invertir"/>
+                    <img src="{% static 'svg/eliminar.svg' %}" class="invertir">
                 </a>
             </div>
             {% endif %}
