@@ -17,6 +17,17 @@ footer,
     background-color: #ffffff;
 }
 
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    padding-top: 75px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
