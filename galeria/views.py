@@ -10,7 +10,6 @@ from datetime import datetime
 
 def vw_index(request):
     ltPublicaciones=Usuario.objects.all()
-    print(ltPublicaciones)
     return render(request, "fanpague.html",{'ltPublicaciones':ltPublicaciones})
 
 
@@ -62,6 +61,35 @@ def vw_delete(request, id):
     except Exception as e:
         messages.error(request, "Existió un error al eliminar publicación, intentelo más tarde")
         return redirect("/")
+
+def vw_update(request,id):
+    try:
+        with transaction.atomic():
+            unaPublicacion=Publicacion.objects.get(id=id)
+            unaPublicacion.direccion=request.POST['direccion']
+            unaPublicacion.descripcion=request.POST['descripcion']
+            unaPublicacion.save()
+            unUsuario = Usuario.objects.get(id=request.session["usuario"]["id"])
+            indice =0
+            for i in unUsuario.json_publicaciones:
+                if(i['publicacion_id']==id):
+                    unUsuario.json_publicaciones.pop(indice)
+                    unUsuario.json_publicaciones.append(
+                    {
+                        "publicacion_id": unaPublicacion.id,
+                        "fecha": unaPublicacion.fecha,
+                        "direccion": unaPublicacion.direccion,
+                        "descripcion": unaPublicacion.descripcion,
+                        "ruta_publicacion": unaPublicacion.ruta_publicacion.url,
+                    }
+                    )
+                    unUsuario.save()
+                indice+=1
+        return redirect("/")
+    except Exception as e:
+        messages.error(request, "Existió un error al eliminar publicación, intentelo más tarde")
+        return redirect("/")
+
 
 
 

@@ -14,6 +14,7 @@ urlpatterns = (
         path("logout", vw_session.logout, name="logout"),
         path("create-user/", vw_session.vw_create, name="create-user"),
         path("create-publicacion/", vw_galeria.vw_create, name="create-publicacion"),
+        path("update-publicacion/<int:id>", vw_galeria.vw_update, name="update-publicacion"),
         path("delete-publicacion/<int:id>", vw_galeria.vw_delete, name="delete-publicacion"),
         path("admin/", admin.site.urls),
     ]
