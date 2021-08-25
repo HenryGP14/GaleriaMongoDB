@@ -2,3 +2,4 @@ django-environ
 python-dotenv
 djongo
 pillow
+django
